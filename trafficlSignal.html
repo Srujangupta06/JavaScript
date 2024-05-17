@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Signal Controll</title>
+    
+</head>
+<style>
+    .main-heading{
+        font-size: 28px;
+        text-align: center;
+        padding-top: 25px;
+    }
+    .traffic-light-container{
+        background-color: black;
+        border-radius: 28px;
+        height: 37vh;
+        width: 80px;
+        padding: 10px;
+    }
+    .light{
+        background-color: lightgray;
+        height: 60px;
+        width: 60px;
+        border-radius: 60px;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+    .bg-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-top: 35px;
+    }
+    .btn-container{
+        display: flex;
+        flex-direction: column;
+        margin-left: 25px;
+    }
+    .custom-btn{
+        height: 35px;
+        width: 80px;
+        font-size: 15px;
+        margin-bottom: 38px;
+        border-width: 0;
+        border-radius: 10px;
+        background-color: lightgray;
+    }
+    @media screen and (max-width: 480px){
+        .main-heading{
+        font-size: 16px;
+        text-align: center;
+        padding-top: 25px;
+    }
+    .traffic-light-container{
+        background-color: black;
+        border-radius: 28px;
+        height: 200px;
+        width: 60px;
+        padding: 8px;
+    }
+    .light{
+        background-color: lightgray;
+        height: 45px;
+        width: 45px;
+        border-radius: 45px;
+        margin-left: 8px;
+        margin-bottom: 18px;
+        margin-top: 10px;
+    }
+    .bg-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-top: 35px;
+    }
+    .btn-container{
+        display: flex;
+        flex-direction: column;
+        margin-left: 25px;
+    }
+    .custom-btn{
+        height: 30px;
+        width: 85px;
+        font-size: 10px;
+        margin-bottom: 30px;
+        border-width: 0;
+        border-radius: 10px;
+        background-color: lightgray;
+    }
+    }
+</style>
+<body>
+    <h1 class="main-heading">Traffic Signal Controlling using JavaScript</h1>
+    <div class="bg-container">
+        <div class="traffic-light-container">
+            <div class="light" id="red-light"></div>
+            <div class="light" id="orange-light"></div>
+            <div class="light"id="green-light"></div>
+        </div>
+
+        <div class="btn-container">
+            <button class="custom-btn" id="stopBtn" onclick="stop()">Stop</button>
+            <button class="custom-btn"  id="readyBtn" onclick="ready()">Ready</button>
+            <button class="custom-btn"  id="goBtn" onclick="go()">Go</button>
+        </div>
+    </div>
+<script>
+    var redLightBtnEl = document.getElementById("stopBtn");
+    var orangeLightBtnEl = document.getElementById("readyBtn");
+    var greenLightBtnEl = document.getElementById("goBtn");
+    function stop(){
+        document.getElementById("red-light").style.backgroundColor = "red";
+        document.getElementById("orange-light").style.backgroundColor = "lightgray";
+        document.getElementById("green-light").style.backgroundColor = "lightgray";
+        redLightBtnEl.style.backgroundColor = "red";
+        redLightBtnEl.style.color = "#ffffff";
+        orangeLightBtnEl.style.backgroundColor = "lightgray";
+        greenLightBtnEl.style.backgroundColor = "lightgray";
+    }
+    function ready(){
+        document.getElementById("orange-light").style.backgroundColor = "orange";
+        document.getElementById("red-light").style.backgroundColor = "lightgray";
+        document.getElementById("green-light").style.backgroundColor = "lightgray";
+        redLightBtnEl.style.backgroundColor = "lightgray";
+        orangeLightBtnEl.style.color = "#ffffff";
+        orangeLightBtnEl.style.backgroundColor = "orange";
+        greenLightBtnEl.style.backgroundColor = "lightgray";
+    }
+    function go(){
+        document.getElementById("green-light").style.backgroundColor = "green";
+        document.getElementById("orange-light").style.backgroundColor = "lightgray";
+        document.getElementById("red-light").style.backgroundColor = "lightgray";
+        redLightBtnEl.style.backgroundColor = "lightgray";
+        greenLightBtnEl.style.color = "#ffffff";
+        orangeLightBtnEl.style.backgroundColor = "lightgray";
+        greenLightBtnEl.style.backgroundColor = "green";
+    }
+    
+</script>
+    </body>
+</html>
